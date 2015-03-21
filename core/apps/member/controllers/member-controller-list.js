@@ -56,7 +56,7 @@ function MemberControllerList($rootScope, $scope, $state, $modal, memberFactory,
         // we use $scope.member here to avoid the isolation made by tabset directive
         // we pre-select None as the default for the radio buttons
         $scope.member = {};
-        $scope.member.degree = "None";
+        $scope.member.degree = "none";
         $scope.member.year_in = new Date().getFullYear();
         $modal.open({
             templateUrl: 'core/apps/member/views/member-create.html',
