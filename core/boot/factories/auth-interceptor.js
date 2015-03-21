@@ -12,7 +12,8 @@ angular.module('Instanto')
                    if (response.status === 401) {
                     localStorage.removeItem("instanto_token");
                         console.error('Trying to access an unauthorized route.');
-                        window.location.href = "/login.html";
+                        document.getElementById("page-wrapper").setAttribute("hidden", true);
+                        document.getElementById("login-form").removeAttribute("hidden");
                     } else if (response.status === 400) {
                         console.error(response.data.reason);
                         ngToast.create({

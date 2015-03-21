@@ -44,7 +44,7 @@ function MasterCtrl($scope, $http) {
 
     $scope.logout = function() {
         localStorage.removeItem("instanto_token");
-        window.location = "./login.html";
+        location.reload();
     };
 
 }

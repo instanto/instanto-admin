@@ -13,6 +13,7 @@ angular.module('Instanto')
 
         logout: function() {
             localStorage.removeItem("instanto_token");
+            location.reload();
         },
 
         hasPermission: function(permission) {

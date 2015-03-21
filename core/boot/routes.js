@@ -200,7 +200,8 @@ angular.module('Instanto').run(['$rootScope', '$state', 'Auth', function ($rootS
     $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
         // if it is the fist time we are logged in we should populate some settings from the token
         if(!Auth.isLoggedIn()) {
-            window.location.href="/instanto_app_admin/login.html";
+            document.getElementById("page-wrapper").setAttribute("hidden", true);
+            document.getElementById("login-form").removeAttribute("hidden");
         }
         // if it is the fist time we are logged in we should populate some settings from the token
         if(!$rootScope.user) {
