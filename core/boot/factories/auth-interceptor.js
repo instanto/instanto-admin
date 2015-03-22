@@ -15,9 +15,11 @@ angular.module('Instanto')
                         document.getElementById("page-wrapper").setAttribute("hidden", true);
                         document.getElementById("login-form").removeAttribute("hidden");
                     } else if (response.status === 400) {
-                        console.error(response.data.reason);
+                        var field = response.data.field;
+                        var reason = response.data.reason;
+                        field = field.split("_").join(" ");
                         ngToast.create({
-                            content: response.data.field + ': ' + response.data.reason,
+                            content: field + ': ' + reason,
                             class: 'danger'
                         });
                     } else  if (response.status === 415) {
