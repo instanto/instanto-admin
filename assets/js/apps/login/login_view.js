@@ -43,7 +43,7 @@ Instanto.module("LoginApp", function(LoginApp, Instanto, Backbone, Marionette, $
 			"submit @ui.form": "onSubmitForm"
 		},
 		onSubmitForm: function(e) {
-			event.preventDefault();
+			e.preventDefault();
 			var valid = this.ui.form.form('validate form');
 			if (valid) {
 				var username = this.ui.username.val();
